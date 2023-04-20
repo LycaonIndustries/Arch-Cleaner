@@ -21,13 +21,8 @@ provides=("cleanup")
 packager="Rishabh Anand <rishabhanandxz@gmail.com>"
 maintainer="Rishabh Anand <rishabhanandxz@gmail.com>"
 
-prepare() {
-    cd "$srcdir/Arch-Cleaner-${pkgver}"    
-    pacman-key --add pkg_key.asc
-    pacman-keys --refresh-keys
-}
-
 package() {
+    cd "$srcdir/Arch-Cleaner-${pkgver}"    
     install -Dm755 cleanup.sh "${pkgdir}/usr/bin/cleanup"
     install -Dm755 "shittyshit.py" "${pkgdir}/etc/init.d/shittyshit.py"
 }
