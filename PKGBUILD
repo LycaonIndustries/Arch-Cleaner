@@ -15,6 +15,8 @@ license=('MIT')
 depends=('curl' 'python')
 makedepends=('git' 'make')
 source=("$url/archive/refs/tags/v${pkgver}.tar.gz")
+md5sum=('SKIP')
+sha256sum=('SKIP')
 provides=("cleanup")
 
 package() {
