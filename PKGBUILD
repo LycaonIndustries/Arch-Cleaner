@@ -14,13 +14,13 @@ url="https://github.com/LycaonIndustries/Arch-Cleanup"
 license=('MIT')
 depends=('curl' 'python')
 makedepends=('git' 'make')
-source=("cleanup.sh shittyshit.py")
+source=("git+$url")
 provides=("cleanup")
 
 package() {
     cd "${srcdir}"
     install -Dm755 cleanup.sh "${pkgdir}/usr/bin/cleanup"
-    install -Dm755 "${srcdir}/shittyshit.py" "${pkgdir}/etc/init.d/shittyshit"
+    install -Dm755 "${srcdir}/shittyshit.py" "${pkgdir}/etc/init.d/shittyshit.py"
 }
 
 # vim:set ts=2 sw=2 et:
