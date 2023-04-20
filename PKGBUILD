@@ -10,11 +10,11 @@ pkgver=0.2
 pkgrel=1
 pkgdesc="A system-wide command for cleaning up files and directories on Arch Linux systems."
 arch=('any')
-url="https://github.com/LycaonIndustries/Arch-Cleanup"
+url="https://github.com/LycaonIndustries/Arch-Cleaner"
 license=('MIT')
 depends=('curl' 'python')
 makedepends=('git' 'make')
-source=("https://github.com/LycaonIndustries/Arch-Cleanup/archive/refs/tags/v${pkgver}.tar.gz")
+source=("$url/archive/refs/tags/v${pkgver}.tar.gz")
 provides=("cleanup")
 
 package() {
