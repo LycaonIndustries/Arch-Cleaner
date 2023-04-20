@@ -20,7 +20,7 @@ echo '    /ossssssss/        +ssssooo/-'
 echo '  `/ossssso+/:-        -:/+osssso+-'
 echo ' `+sso+:-`   Arch Cleaner  `.-/+oso:'
 echo '`++:.                           `-/+/'
-echo '.`             Mark - I             ` '
+echo '.`             Mark - II             ` '
 
 echo ''
 echo ''

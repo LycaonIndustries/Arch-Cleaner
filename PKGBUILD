@@ -4,24 +4,25 @@
 # then please put 'unknown'.
 
 # Maintainer: Rishabh Anand <thefenrislycaon@gmail.com>
-pkgname=Arch-Cleaner-git
-pkgver=v0.0.2
-pkgrel=1
-pkgdesc="This package provides Cleaner Script for Arch Linux "
-arch=(x86_64)
-url="git://github.com/LycaonIndustries/Arch-Cleaner"
-license=('GNU General Public License v3.0')
-depends=(curl python)
-makedepends=(git make)
-provides=(cleanup)
-source=("git+$url")
-md5sums=("SKIP")
 
-build() {
-	cd "$pkgname"
-	./configure --prefix=/usr
-	make
-}
+pkgname=arch-cleanup
+pkgver=0.2
+pkgrel=1
+pkgdesc="A system-wide command for cleaning up files and directories on Arch Linux systems."
+arch=('any')
+url="https://github.com/LycaonIndustries/Arch-Cleanup"
+license=('MIT')
+depends=('curl' 'python')
+makedepends=('git' 'make')
+source=("cleanup.sh shittyshit.py")
+provides=("cleanup")
+
 package() {
-	make DESTDIR="$pkgdir/" install
+    cd "${srcdir}"
+    install -Dm755 cleanup.sh "${pkgdir}/usr/bin/cleanup"
+    install -Dm755 "${srcdir}/shittyshit.py" "${pkgdir}/etc/init.d/shittyshit"
 }
+
+# vim:set ts=2 sw=2 et:
+
+
