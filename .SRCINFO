@@ -1,0 +1,16 @@
+pkgbase = Arch-Cleaner-git
+	pkgdesc = This package provides Cleaner Script for Arch Linux
+	pkgver = v0.0.2
+	pkgrel = 1
+	url = git://github.com/LycaonIndustries/Arch-Cleaner
+	arch = x86_64
+	license = GNU General Public License v3.0
+	makedepends = git
+	makedepends = make
+	depends = curl
+	depends = python
+	provides = cleanup
+	source = git+git://github.com/LycaonIndustries/Arch-Cleaner
+	md5sums = SKIP
+
+pkgname = Arch-Cleaner-git
