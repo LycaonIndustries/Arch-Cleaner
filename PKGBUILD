@@ -14,7 +14,7 @@ url="https://github.com/LycaonIndustries/Arch-Cleanup"
 license=('MIT')
 depends=('curl' 'python')
 makedepends=('git' 'make')
-source=("git+$url")
+source=("https://github.com/LycaonIndustries/Arch-Cleanup/archive/refs/tags/v${pkgver}.tar.gz")
 provides=("cleanup")
 
 package() {
