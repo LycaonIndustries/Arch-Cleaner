@@ -1,0 +1,48 @@
+#!/bin/bash
+
+# Check for Bash
+if ! command -v bash >/dev/null 2>&1; then
+  echo "Error: Bash is not installed."
+  exit 1
+fi
+
+# Check for curl
+if ! command -v curl >/dev/null 2>&1; then
+  echo "Error: curl is not installed."
+  exit 1
+fi
+
+# Check for git
+if ! command -v git >/dev/null 2>&1; then
+  echo "Error: git is not installed."
+  exit 1
+fi
+
+# Check for make
+if ! command -v make >/dev/null 2>&1; then
+  echo "Error: make is not installed."
+  exit 1
+fi
+
+# Check for pacman (to ensure Arch-based system)
+if ! command -v pacman >/dev/null 2>&1; then
+  echo "Error: pacman is not installed. This script is intended for use on Arch-based systems only."
+  exit 1
+fi
+
+# Check for Python
+if ! command -v python >/dev/null 2>&1; then
+  echo "Error: Python is not installed."
+  pacman -S python
+fi
+
+# Check that the Python version is at least 3.6
+python_version=$(python -c "import platform; print(platform.python_version())")
+if ! python -c "import sys; exit(not (sys.version_info.major == 3 and sys.version_info.minor >= 6))"; then
+  echo "Error: Python version 3.6 or higher is required (found version $python_version)."
+  exit 1
+fi
+
+echo "Configuration complete. Your system has all necessary dependencies installed."
+exit 0
+
